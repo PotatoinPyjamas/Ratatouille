@@ -47,7 +47,6 @@ def values():
         response = request.get('https://ratatouille-spaag.herokuapp.com/')
         k = response.json()
         return k
-        return
     elif request.method == 'GET':
         return json_d
 
