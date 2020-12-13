@@ -43,7 +43,13 @@ json_d=json.dumps(d)
 
 @app.route('/', methods=['GET', 'POST'])
 def values():
-    return json_d
+    if request.method == 'POST':
+        response = request.get('https://ratatouille-spaag.herokuapp.com/')
+        k = response.json()
+        return k
+        return
+    elif request.method == 'GET':
+        return json_d
 
 
 if __name__ == '__main__':
